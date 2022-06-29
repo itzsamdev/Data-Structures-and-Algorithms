@@ -49,9 +49,11 @@ int KadaneAlgorithm(int arr[], int n)
     int curr_sum = 0;
     for (int i = 0; i < n; i++)
     {
-        if (curr_sum < 0)
-            curr_sum = 0;
         curr_sum += arr[i];
+        if (curr_sum < 0)
+        {
+            curr_sum = 0;
+        }
         largest = max(largest, curr_sum);
     }
     return largest;
