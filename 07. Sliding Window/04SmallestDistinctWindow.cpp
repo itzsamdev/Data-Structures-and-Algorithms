@@ -30,6 +30,7 @@ int findSubString(string str)
                 m[str[i]]--;
                 i++;
             }
+            // Minimizing the answer
             ans = min(ans, j - i + 1);
         }
         j++;
