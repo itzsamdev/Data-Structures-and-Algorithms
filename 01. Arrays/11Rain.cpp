@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Trapping Rain Water
 int trappedWater(vector<int> heights)
 {
     int n = heights.size();
@@ -8,6 +9,7 @@ int trappedWater(vector<int> heights)
     {
         return 0;
     }
+    // Storing max height in left and max in right for each index
     vector<int> left(n, 0), right(n, 0);
     left[0] = heights[0];
     right[n - 1] = heights[n - 1];
@@ -16,6 +18,7 @@ int trappedWater(vector<int> heights)
         left[i] = max(left[i - 1], heights[i]);
         right[n - i - 1] = max(right[n - i], heights[n - i - 1]);
     }
+    // Subtracting minimum in left, right with current height to get trapped water
     int res = 0;
     for (int i = 0; i < n; i++)
     {
