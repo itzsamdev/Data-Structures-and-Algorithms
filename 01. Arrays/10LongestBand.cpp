@@ -5,16 +5,20 @@ using namespace std;
 int findLargestBand(vector<int> arr)
 {
     unordered_set<int> s;
+    // Putting all elements inside set
     for (auto it : arr)
     {
         s.insert(it);
     }
+    // Searching for next elements
     int largest = 1;
     for (auto x : arr)
     {
-        int parent = x - 1;
-        if (s.find(parent) == s.end())
+        int previous = x - 1;
+        // If previous not exist, this is starting of band
+        if (s.find(previous) == s.end())
         {
+            // Storing length of band
             int cnt = 1;
             int next = x + 1;
             while (s.find(next) != s.end())
@@ -22,6 +26,7 @@ int findLargestBand(vector<int> arr)
                 cnt++;
                 next++;
             }
+            // Maximizing
             largest = max(largest, cnt);
         }
     }
