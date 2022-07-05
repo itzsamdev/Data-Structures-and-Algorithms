@@ -13,6 +13,7 @@ bool outOrder(int arr[], int i, int n)
     }
     return arr[i] > arr[i + 1] or arr[i] < arr[i - 1];
 }
+// Find the first and last index of unsorted subarray after sorting it whole array will become sorted
 vector<int> printUnsorted(int arr[], int n)
 {
     if (n == 1)
