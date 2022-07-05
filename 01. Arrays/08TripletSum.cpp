@@ -2,8 +2,10 @@
 using namespace std;
 
 // Time Complexity O(N log N)+ N
+// 2 Pointer Approach
 vector<int> findTriplet(vector<int> arr, int S)
 {
+    // Sorting the original array
     sort(arr.begin(), arr.end());
     vector<int> ans;
     for (int i = 0; i < arr.size() - 2; i++)
