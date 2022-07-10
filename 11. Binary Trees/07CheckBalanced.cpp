@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    Node *left;
+    Node *right;
+    Node()
+    {
+        data = 0;
+        left = NULL;
+        right = NULL;
+    }
+    Node(int d)
+    {
+        data = d;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+int height(Node *root)
+{
+    if (root == NULL)
+        return 0;
+
+    int lh = height(root->left);
+    int rh = height(root->right);
+
+    if (lh == -1 || rh == -1)
+    {
+        return -1;
+    }
+    if (abs(lh - rh) > 1)
+    {
+        return -1;
+    }
+    return max(lh, rh) + 1;
+}
+
+bool checkBalanced(Node *root)
+{
+    int h = height(root);
+    if (h == -1)
+        return false;
+    return true;
+}
