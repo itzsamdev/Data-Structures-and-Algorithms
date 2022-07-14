@@ -1,20 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//  O(n log K)
 int findKthLargest(vector<int> &nums, int k)
 {
+    // Min Heap
     priority_queue<int, vector<int>, greater<int>> pq;
     int n = nums.size();
-    k = n - k;
-
-    for (auto x : nums)
+    for (int i = 0; i < n; i++)
     {
-        pq.push(x);
+        pq.push(nums[i]);
+        if (pq.size() > k)
+        {
+            pq.pop();
+        }
     }
-    while (k)
+    while (pq.size() > 1)
     {
         pq.pop();
-        k--;
     }
     return pq.top();
 }
