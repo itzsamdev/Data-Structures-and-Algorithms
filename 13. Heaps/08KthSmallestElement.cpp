@@ -1,19 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int kthSmallest(int arr[], int l, int r, int k)
+// O(n log K)
+int kthSmallest(int arr[], int k)
 {
-    priority_queue<int, vector<int>, greater<int>> pq;
-    for (int i = l; i <= r; i++)
+    int n = sizeof(arr) / sizeof(arr[0]);
+    // Max Heap
+    priority_queue<int> pq;
+    for (int i = 0; i < k; i++)
     {
         pq.push(arr[i]);
     }
 
-    int a = 1;
-    while (a < k)
+    for (int i = k; i < n; i++)
     {
+        pq.push(arr[i]);
         pq.pop();
-        a++;
     }
     return pq.top();
 }
