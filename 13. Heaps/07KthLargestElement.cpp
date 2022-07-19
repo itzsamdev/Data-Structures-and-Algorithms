@@ -15,9 +15,6 @@ int findKthLargest(vector<int> &nums, int k)
             pq.pop();
         }
     }
-    while (pq.size() > 1)
-    {
-        pq.pop();
-    }
+
     return pq.top();
 }
