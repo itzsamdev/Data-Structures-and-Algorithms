@@ -21,8 +21,6 @@ public:
     }
 };
 
-int maxLevel = 0;
-
 void solve(Node *root, vector<int> &ans, int level)
 {
     if (root == NULL)
