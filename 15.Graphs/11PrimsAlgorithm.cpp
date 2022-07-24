@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Return weight of all edges after finding minimum spanning tree
+// Return weight of all edges after finding minimum spanning tree using Prim's Algorithm
 int spanningTree(int V, vector<vector<int>> adj[])
 {
     vector<int> key(V, INT_MAX);
