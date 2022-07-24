@@ -3,7 +3,8 @@ using namespace std;
 
 int parent[10000];
 int ranks[10000];
-// Making set
+
+// Making set data structure
 void makeSet(int n)
 {
     for (int i = 1; i <= n; i++)
